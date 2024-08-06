@@ -108,6 +108,14 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
 
+    @media (max-width: 900px) {
+        background: initial;
+        background-image: url('../img/banner.webp');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
     article {
         max-width: 46.3rem;
         width: 90%;
@@ -126,6 +134,10 @@ p {
         font-size: 1.8rem;
         margin: 2.4rem 0 2.8rem;
     }
+
+    a {
+        @include btn;
+    }
 }
 
 .results {
@@ -134,6 +146,10 @@ p {
     align-items: center;
     text-align: center;
     margin: 17.5rem auto 9.4rem;
+
+    @media (max-width: 900px) {
+        margin: 5rem auto;
+    }
 
     h2 {
         color: $cyan;
@@ -149,12 +165,24 @@ p {
         flex-wrap: wrap;
         gap: 6rem;
 
+        @media (max-width: 900px) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
         hr {
             width: .3rem;
             min-height: 100%;
             appearance: none;
             background-color: $cyan;
             border: none;
+
+            @media (max-width: 900px) {
+                min-height: initial;
+                height: .2rem;
+                width: 80%;
+                margin: 0 auto;
+            }
         }
     }
 
@@ -249,6 +277,11 @@ p {
             text-align: center;
             max-width: 28.6rem;
 
+            @media (max-width: 600px) {
+                max-width: 100%;
+                min-width: 100%;
+            }
+
             figure {
                 width: fit-content;
                 margin-bottom: 1.7rem;
@@ -280,12 +313,38 @@ p {
 
 .partnership {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    margin-top: 14rem;
+    margin-top: 10rem;
+
+    @media (max-width: 900px) {
+        gap: 3rem;
+    }
+
+    @media (max-width: 880px) {
+        flex-direction: column;
+        margin-top: 0;
+    }
 
     &__heading {
         width: 45%;
         margin: 0 5.8rem 1.6rem auto;
+
+        @media (max-width: 1080px) {
+            width: 55%;
+        }
+
+        @media (max-width: 900px) {
+            max-width: 50%;
+        }
+
+        @media (max-width: 880px) {
+            order: 2;
+            max-width: 90%;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
     }
 
     figure {
@@ -295,6 +354,26 @@ p {
         aspect-ratio: 1;
         border-radius: 3rem;
         overflow: hidden;
+
+        @media (max-width: 1280px) {
+            max-width: 46.1rem;
+        }
+
+        @media (max-width: 1080px) {
+            max-width: 26.1rem;
+        }
+
+        @media (max-width: 900px) {
+            margin-left: 10%;
+        }
+
+        @media (max-width: 880px) {
+            margin: 0 auto;
+            max-width: 100%;
+            width: 100%;
+            order: 1;
+            border-radius: 0;
+        }
 
         img {
             width: 100%;
@@ -313,6 +392,11 @@ p {
         width: 100%;
         padding: 0 4.29% 3.1rem 1.40%;
 
+        @media (max-width: 880px) {
+            order: 3;
+            padding: 5rem 10%;
+        }
+
         figure {
             margin-top: -10.7rem;
         }
@@ -327,10 +411,19 @@ p {
         gap: 3.2rem;
 
         color: $white;
+        
+        @media (max-width: 1280px) {
+            margin-top: 2rem;
+        }
 
         a {
             @include btn;
             max-width: 21rem;
+
+            @media (max-width: 880px) {
+                align-self: center;
+            }
+
         }
     }
 
@@ -338,6 +431,16 @@ p {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 880px) {
+            gap: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
         & > span {
             font-size: 3.5rem;
@@ -353,6 +456,14 @@ p {
             appearance: none;
             border: none;
             background-color: $white;
+
+            @media (max-width: 600px) {
+                width: 80%;
+                min-width: 20rem;
+                min-height: initial;
+                height: .2rem;
+                margin: 0 auto;
+            }
         }
 
         article {
@@ -411,12 +522,49 @@ p {
 
         max-width: 53.8rem;
         width: 90%;
+        position: relative;
+
+        & > figure {
+            position: absolute;
+            left: 3.3rem;
+            top: -2.5rem;
+
+            max-width: 5.7rem;
+
+            svg {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+
+        &:last-of-type > figure {
+            svg, svg path {
+                fill: $cyan;
+            }
+        }
 
         article {
             background-color: $white;
             border-radius: 1.5rem;
             padding: 4.5rem 4.5rem 2.6rem;
             white-space: break-spaces;
+            width: 100%;
+
+            @media (max-width: 600px) {
+                padding: 3rem;
+            }
+
+            figure {
+                max-width: fit-content;
+                width: fit-content;
+
+                img {
+                    width: fit-content;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
         }
     
         cite {
@@ -428,6 +576,7 @@ p {
             font-size: 1.6rem;
             font-style: normal;
             font-family: inherit;
+            white-space: break-spaces;
         }
     }
 
@@ -482,6 +631,10 @@ p {
     background-size: cover;
     min-height: 100vh;
 
+    @media (max-width: 600px) {
+        min-height: 50vh;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -492,6 +645,7 @@ p {
     h2 {
         font-size: 3.5rem;
         color: $white;
+        text-align: center;
     }
 
     p {
@@ -561,5 +715,11 @@ p {
         font-size: 1.2rem;
         text-align: center;
         line-height: 2.4rem;
+    }
+
+    a {
+        &:not(:last-of-type)::after {
+            content: ' |';
+        }
     }
 }
