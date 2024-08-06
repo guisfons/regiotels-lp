@@ -88,6 +88,7 @@ p {
     align-items: center;
     max-width: 18.3rem;
     width: 100%;
+    height: fit-content;
 
     background-color: $pink;
     padding: 1.2rem;
@@ -96,6 +97,43 @@ p {
     font-size: 1.6rem;
     font-weight: 400;
     color: $white;
+}
+
+.header {
+    background-color: $white;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0px 4px 5px 0px rgba($color: $black, $alpha: .15);
+
+    @media (max-width: 900px) {
+        padding: 1rem 0;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            @include btn;
+
+            @media (max-width: 900px) {
+                max-width: 13rem;
+            }
+        }
+    }
+
+    &__logo {
+        max-width: 13.4rem;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
 }
 
 .banner {
@@ -108,13 +146,7 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
 
-    @media (max-width: 900px) {
-        background: initial;
-        background-image: url('../img/banner.webp');
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-    }
+    padding: 2rem 0;
 
     article {
         max-width: 46.3rem;
@@ -145,7 +177,7 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 17.5rem auto 9.4rem;
+    margin: 10rem auto;
 
     @media (max-width: 900px) {
         margin: 5rem auto;
@@ -157,6 +189,8 @@ p {
 
     p {
         margin: 1.3rem 0 5.3rem;
+
+        @media (max-width: 900px) { text-align: left; }
     }
 
     &__content {
@@ -212,7 +246,7 @@ p {
             }
         }
 
-        &:nth-of-type(4), &:nth-of-type(5) {
+        &:nth-of-type(3), &:nth-of-type(4) {
             span:first-of-type::after {
                 content: '%';
             }
@@ -251,6 +285,7 @@ p {
 
         & > p {
             margin: 1.5rem 0 4rem;
+            @media (max-width: 900px) { text-align: left; }
         }
 
         & > *:not(.expertise__content) {
@@ -336,6 +371,10 @@ p {
 
         @media (max-width: 900px) {
             max-width: 50%;
+
+            & > p {
+                text-align: left;
+            }
         }
 
         @media (max-width: 880px) {
@@ -432,6 +471,10 @@ p {
         align-items: center;
         justify-content: space-between;
 
+        @media (max-width: 900px) {
+            &:first-of-type hr { display: none; }
+        }
+
         @media (max-width: 880px) {
             gap: 2rem;
         }
@@ -447,6 +490,10 @@ p {
             font-weight: 700;
             max-width: 4.5rem;
             width: 100%;
+
+            @media (max-width: 900px) {
+                order: 2;
+            }
         }
 
         & > hr {
@@ -456,6 +503,10 @@ p {
             appearance: none;
             border: none;
             background-color: $white;
+
+            @media (max-width: 900px) {
+                order: 1;
+            }
 
             @media (max-width: 600px) {
                 width: 80%;
@@ -469,6 +520,10 @@ p {
         article {
             max-width: 56.1rem;
             width: 100%;
+
+            @media (max-width: 900px) {
+                order: 3;
+            }
         }
 
         p {
