@@ -19,6 +19,7 @@ $almostblack: #333;
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    scroll-padding-top: 15rem;
 }
 body {
     box-sizing: border-box;
@@ -285,7 +286,10 @@ p {
 
         & > p {
             margin: 1.5rem 0 4rem;
-            @media (max-width: 900px) { text-align: left; }
+            @media (max-width: 900px) {
+                text-align: left;
+                margin-top: 1.3rem;
+            }
         }
 
         & > *:not(.expertise__content) {
@@ -374,6 +378,7 @@ p {
 
             & > p {
                 text-align: left;
+                margin-top: 1.3rem;
             }
         }
 
