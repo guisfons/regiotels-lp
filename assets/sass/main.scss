@@ -428,7 +428,6 @@ p {
 
     &__wrapper {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         gap: 5.7rem;
 
@@ -475,8 +474,12 @@ p {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
+        @media (min-width: 901px) {
+            gap: 1rem;
+        }
 
-        @media (max-width: 900px) {
+        @media (max-width: 600px) {
             &:first-of-type hr { display: none; }
         }
 
@@ -691,7 +694,8 @@ p {
     background-size: cover;
     min-height: 100vh;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1080px) {
+        background-position: center center;
         min-height: 50vh;
     }
 
